@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyjątkowa Gra</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="kontener-gry">
+        <form id="graForm" action="https://formspree.io/f/mkgkkoyv" method="POST">
+            
+
+            <div class="krok aktywny" id="krok-1">
+                <h2>Witaj Kochanie!</h2>
+                <p>Obejrzyj to wideo, zanim zaczniesz. Znajdziesz tu zasady naszej gry.</p>
+                <video controls width="100%">
+                    <source src="wideo_powitalne.mp4" type="video/mp4">
+                    Twoja przeglądarka nie obsługuje wideo.
+                </video>
+                <button type="button" class="przycisk-dalej" onclick="pokazKrok(2)">Zaczynam!</button>
+            </div>
+
+            <div class="krok" id="krok-2">
+                <h2>Formularz zgłoszeniowy</h2>
+                <label>Imię:</label>
+                <input type="text" name="imie" required>
+                <label>Wiek:</label>
+                <input type="number" name="wiek" required>
+                <label>Powód, dla którego to właśnie Ty powinnaś wygrać:</label>
+                <textarea name="powod_wygranej" required></textarea>
+                <button type="button" class="przycisk-dalej" onclick="pokazKrok(3)">Dalej</button>
+            </div>
+
+            <div class="krok" id="krok-3">
+                <h2>Quiz, część 1</h2>
+                
+                <fieldset>
+                    <legend>A. Ile dni minęło od oficjalnego zapytania o związek?</legend>
+                    <input type="radio" name="q1" value="1097"> 1097<br>
+                    <input type="radio" name="q1" value="1432"> 1432<br>
+                    <input type="radio" name="q1" value="905"> 905<br>
+                    <input type="radio" name="q1" value="734"> 734<br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>B. Ile razy oświadczyłem ci się pod wpływem?</legend>
+                    <input type="radio" name="q2" value="8"> 8<br>
+                    <input type="radio" name="q2" value="5"> 5<br>
+                    <input type="radio" name="q2" value="3"> 3<br>
+                    <input type="radio" name="q2" value="za_duzo"> sam nie pamiętam ale dużo<br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>C. Ile moich bluz zostało przez ciebie skradzionych mojej osobie?</legend>
+                    <input type="radio" name="q3" value="2"> 2<br>
+                    <input type="radio" name="q3" value="4"> 4<br>
+                    <input type="radio" name="q3" value="1"> 1<br>
+                    <input type="radio" name="q3" value="3"> 3<br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>D. Jak nazywa się piosenka która znajduje się na standzie na moim biurku?</legend>
+                    <input type="radio" name="q4" value="Half a Heart"> Half a Heart<br>
+                    <input type="radio" name="q4" value="Kiss you"> Kiss you<br>
+                    <input type="radio" name="q4" value="Little Things"> Little Things<br>
+                    <input type="radio" name="q4" value="Loved You First"> Loved You First<br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>E. Ile miałem lat jak się poznaliśmy?</legend>
+                    <input type="radio" name="q5" value="16"> 16<br>
+                    <input type="radio" name="q5" value="17"> 17<br>
+                    <input type="radio" name="q5" value="18"> 18<br>
+                    <input type="radio" name="q5" value="19"> 19<br>
+                </fieldset>
+
+                <button type="button" class="przycisk-dalej" onclick="pokazKrok(4)">Dalej do puzzli</button>
+            </div>
+
+            <div class="krok" id="krok-4">
+    <h2>Przerwa na puzzle!</h2>
+    <p>Zasłużona chwila przerwy. Kliknij poniższy przycisk, aby otworzyć puzzle w nowej karcie. Ułóż je i wróć tutaj, aby kontynuować grę!</p>
+
+    <a href="https://www.jigsawplanet.com/?rc=play&pid=36123acb2210" 
+       target="_blank" 
+       class="przycisk-puzzle">
+
+       Kliknij tutaj, aby ułożyć puzzle!
+    </a>
+
+    <p style="margin-top: 20px;">Po ułożeniu wróć do tej karty i kliknij "Dalej".</p>
+
+    <button type="button" class="przycisk-dalej" onclick="pokazKrok(5)">Już gotowe, idę dalej!</button>
+</div>
+
+            <div class="krok" id="krok-5">
+                <h2>Quiz, część 2</h2>
+
+                <fieldset>
+                    <legend>A. O jakim zwierzęciu rozmawialiśmy na 1 randce?</legend>
+                    <input type="radio" name="q6" value="zaba"> żaba<br>
+                    <input type="radio" name="q6" value="kot"> kot<br>
+                    <input type="radio" name="q6" value="kaczka"> kaczka<br>
+                    <input type="radio" name="q6" value="golab"> gołąb<br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>B. Czy kocham cię bardziej niż ty mnie?</legend>
+                    <input type="radio" name="q7" value="a"> tak<br>
+                    <input type="radio" name="q7" value="b"> zdecydowanie<br>
+                    <input type="radio" name="q7" value="c"> a i owszem<br>
+                    <input type="radio" name="q7" value="d"> nie<br>
+                    
+                </fieldset>
+
+                <fieldset>
+                    <legend>C. Czy tekst „widzisz te gwiazdy...” jest zabawny?</legend>
+                    <input type="radio" name="q8" value="tak"> A) tak<br>
+                    <input type="radio" name="q8" value="nie"> B) nie<br>
+                </fieldset>
+
+                <button type="button" class="przycisk-dalej" onclick="pokazKrok(6)">Dalej</button>
+            </div>
+
+            <div class="krok" id="krok-6">
+                <h2>Uzupełnij daty</h2>
+                <label>A. W którym roku mam urodziny:</label>
+                <input type="text" name="rok_urodzin">
+                <label>B. Za ile lat powinienem ci się oświadczyć:</label>
+                <input type="text" name="oswiadczyny">
+                <label>C. Ile dni już jesteśmy razem:</label>
+                <input type="text" name="dni_razem">
+                <button type="button" class="przycisk-dalej" onclick="pokazKrok(7)">Prawie koniec!</button>
+            </div>
+
+            <div class="krok" id="krok-7">
+                <h2>Pytanie otwarte</h2>
+                <label>Gdzie byś chciała polecieć na wakacje?</label>
+                <textarea name="wakacje"></textarea>
+                
+                <input type="hidden" name="liczba_poprawnych_odpowiedzi" id="liczba_poprawnych">
+                <input type="hidden" name="_captcha" value="false"> <input type="hidden" name="_next" value="https://google.com"> <button type="submit" class="przycisk-dalej" id="przycisk-wyslij">Wyślij wyniki!</button>
+            </div>
+
+            </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

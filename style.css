@@ -1,0 +1,164 @@
+/* Importujemy czcionkę "Lato" z Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* --- GŁÓWNE STYLE --- */
+
+/* Nasza nowa paleta kolorów zdefiniowana jako zmienne CSS */
+:root {
+    --kolor-zielony: #1A472A;     /* Butelkowa zieleń */
+    --kolor-zloty: #D4AF37;       /* Złoty akcent */
+    --kolor-kremowy: #FCFBF4;     /* Tło strony */
+    --kolor-bialy: #FFFFFF;       /* Tło karty */
+    --kolor-tekst: #3D3D3D;       /* Ciemnoszary tekst */
+    --kolor-szary-jasny: #E0E0E0; /* Delikatne ramki */
+}
+
+body {
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--kolor-kremowy); /* Zmienione tło na nasz kremowy kolor */
+    color: var(--kolor-tekst); /* Zmieniony domyślny kolor tekstu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.kontener-gry {
+    background-color: var(--kolor-bialy); /* Czysta biel dla kontrastu */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07); /* Delikatniejszy cień */
+    padding: 30px;
+    width: 100%;
+    max-width: 700px;
+    overflow: hidden;
+}
+
+/* --- LOGIKA KROKÓW (BEZ ZMIAN) --- */
+
+.krok {
+    display: none;
+}
+.krok.aktywny {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- STYLE ELEMENTÓW FORMULARZA --- */
+
+h2 {
+    color: var(--kolor-zielony); /* Nagłówki w kolorze zielonym */
+    border-bottom: 2px solid var(--kolor-szary-jasny); /* Subtelna linia */
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 8px; /* Trochę więcej miejsca */
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--kolor-szary-jasny);
+    border-radius: 8px; /* Bardziej zaokrąglone */
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif; /* Ta sama czcionka */
+    font-size: 15px;
+}
+
+/* Efekt "focus" - podświetlenie po kliknięciu */
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-color: var(--kolor-zielony); /* Podświetlenie na zielono */
+    box-shadow: 0 0 0 3px rgba(26, 71, 42, 0.15); /* Delikatna poświata */
+    outline: none; /* Usuwamy domyślną ramkę */
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+fieldset {
+    border: 1px solid var(--kolor-szary-jasny);
+    border-radius: 8px;
+    margin-top: 20px;
+    padding: 15px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+    color: var(--kolor-zielony); /* Pytania quizu też na zielono */
+}
+
+/* --- STYLE PRZYCISKÓW --- */
+
+/* Główny przycisk (Dalej) */
+.przycisk-dalej {
+    background-color: var(--kolor-zielony); /* Główny kolor: butelkowa zieleń */
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.przycisk-dalej:hover {
+    background-color: #12311D; /* Ciemniejsza zieleń */
+}
+.przycisk-dalej:active {
+    transform: scale(0.99); /* Efekt wciśnięcia */
+}
+
+/* Przycisk Wyślij (specjalny) */
+#przycisk-wyslij {
+    background-color: var(--kolor-zloty); /* Kolor akcentu: złoty */
+    color: var(--kolor-tekst); /* Ciemny tekst na złotym tle */
+}
+#przycisk-wyslij:hover {
+    background-color: #b89b30; /* Ciemniejszy złoty */
+}
+
+/* Przycisk Puzzle (z Kodu 4) */
+.przycisk-puzzle {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--kolor-zloty); /* Ten sam złoty akcent */
+    color: var(--kolor-tekst);
+    border: none;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.przycisk-puzzle:hover {
+    background-color: #b89b30;
+    color: var(--kolor-tekst);
+}
+.przycisk-puzzle:active {
+    transform: scale(0.99);
+}
